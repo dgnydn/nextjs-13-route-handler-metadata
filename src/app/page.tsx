@@ -1,5 +1,8 @@
+"use client";
+
 import { Metadata } from "next";
 import Image from "next/image";
+import { use } from "react";
 
 export const metadata: Metadata = {
   title: "All Posts from dgnydn blog.doganaydin.org",
@@ -42,8 +45,8 @@ async function getBlogPosts() {
   }
 }
 
-export default async function Page() {
-  const posts = await getBlogPosts();
+export default function Page() {
+  const posts = use(getBlogPosts());
   return (
     <div>
       <h1>All Posts from doganaydin</h1>
