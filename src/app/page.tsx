@@ -28,7 +28,9 @@ export const metadata: Metadata = {
 };
 
 async function getBlogPosts() {
-  const response = await fetch("http://localhost:3000/blogs");
+  const response = await fetch(
+    "https://nextjs-route-handler-metadata.vercel.app/blogs"
+  );
   const data = await response.json();
   return data.user.publication.posts;
 }
